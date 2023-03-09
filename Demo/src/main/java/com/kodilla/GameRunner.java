@@ -30,23 +30,23 @@ public class GameRunner {
 
     private void runGame() {
         System.out.println("Starting Game:");
-        boolean gameOver = false;
+
         String player1 = gameSettings.getPlayer1();
         String player2 = gameSettings.getPlayer2();
 
         if (gameSettings.getGameMode() == "Player vs Player") {
-            while (gameOver == false) {
-                if(gameOver = executePlayerMove(player1))
+            while (true) {
+                if(executePlayerMove(player1))
                     break;
 
-                if(gameOver = executePlayerMove(player2))
+                if(executePlayerMove(player2))
                     break;
             }
         } else {
-            while (gameOver == false) {
-                if(gameOver = executePlayerMove(player1))
+            while (true) {
+                if(executePlayerMove(player1))
                     break;
-                if(gameOver = executeCPUMove(player2))
+                if(executeCPUMove(player2))
                     break;
             }
         }
